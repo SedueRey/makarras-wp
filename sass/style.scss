@@ -1,0 +1,52 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+@import url("http://fonts.googleapis.com/css?family=Lora|Raleway:400");
+
+body{
+	background: #FFF4DF;
+	font-family: "Lora", Georgia;
+	font-size: 15px;
+	line-height: 1.55;
+}
+
+a{
+	color: #b43333;
+}
+
+#mainheader{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	padding: 20px;
+	height: calc(100% - 40px);
+	width: 200px;
+	background: #FFF;
+}
+
+section{
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 30px;
+}
+article{
+	max-width: 560px;
+	margin: 0 0 2em 0;
+	h2{
+		font-size: 1.8em;
+		font-family: "Raleway", sans-serif;
+		font-weight: 400;
+		margin: 0 0 0.4em 0;
+		a{
+			text-decoration: none;
+			border-bottom: 1px solid #b43333;
+		}
+	}
+	p{
+		margin: 0 0 1em 0;
+	}
+}
