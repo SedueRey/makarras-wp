@@ -1,9 +1,11 @@
 <?php get_header(); ?>
         <section class="">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        	<article>
+        	<article id="post-<?php the_ID(); ?>">
                 <header>
-                    <h3 class="subtitle">Subtitulo gracioso y todas esas cosas</h3>
+                    <?php if( get_post_meta( $post->ID , 'subtitular', TRUE) ): ?>
+                        <h3 class="subtitle">&laquo;<?php echo get_post_meta( $post->ID , 'subtitular', TRUE); ?>&raquo;</h3>
+                    <?php endif; ?>
                     <h2>
                         <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                     </h2>

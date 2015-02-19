@@ -13,6 +13,13 @@ body{
 	font-family: "Lora", Georgia;
 	font-size: 15px;
 	line-height: 1.55;
+	&.customize-support{
+		margin: 20px 0 0 0;
+		#mainheader{
+			top: 20px;
+			height: calc(100% - 60px);
+		}
+	}
 }
 
 a{
@@ -53,14 +60,18 @@ article{
 		}
 	}
 	h3{
-		margin: 0.4em 0 0 0;
-		font-size: 1.1em;
+		font-size: 1.8em;
 		font-weight: 300;
-		text-transform: uppercase;
+		margin: 0.4em 0 0.3em 0;
 		font-family: "Oswald", sans-serif;
 		color: #787878;
-		position: relative;
-		top: 0.25em;
+		&.subtitle{
+			margin: 0.4em 0 0 0;
+			font-size: 1.1em;
+			text-transform: uppercase;
+			position: relative;
+			top: 0.25em;		
+		}
 	}
 	p{
 		margin: 0 0 1em 0;
