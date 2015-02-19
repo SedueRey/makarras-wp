@@ -23,6 +23,10 @@
 </head>
 <body>
     <header id="mainheader">
-    	Logo & Menú
+    	<h1 id="logo">
+            <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
+                <?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>
+            </a>
+        </h1>
     </header>
     <main>
