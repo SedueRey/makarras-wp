@@ -333,10 +333,9 @@ article{
 			margin: 1em auto;
 		}
 	}
-	ul{
+	ul, ol{
 		list-style: square;
 		margin: 0 0 1em 1.2em;
-		li{}
 	}
 	aside{
 		font-size: 0.85em;
@@ -359,6 +358,43 @@ article{
 			@media screen and (max-width: $break-mobile) {
 				display: none;
 			}
+		}
+	}
+	footer{
+		padding: 0.3em 0.8em;
+		font-size: 0.8em;
+		@include box-shadow(inset 0 0 8px rgba( desaturate( darken($background-color, 40%) , 60%) , 0.25 ) );
+		@include border-radius( 5px );
+	}
+	&.twitter{
+		background: desaturate( $background-color, 60% );
+		margin: 0 0 2em 0;
+		font-size: 1.1em;
+		padding: 0.8em;
+		@include box-shadow(inset 0 0 8px rgba( desaturate( darken($background-color, 40%) , 60%) , 0.25 ) );
+		@include border-radius( 5px );
+		h2{
+			display: none;
+		}
+		aside{
+			font-size: 0.7em;
+			a{
+				display: none;
+			}
+			.avatar{
+				float: right;
+				margin: -16px 0 0 -26px;
+			}
+		}
+		footer{
+			display: none;
+		}
+		&:before{
+			content: "Twitter";
+			font-family: "Oswald", sans-serif;
+			text-shadow: 0 -0.03em 0.25em rgba(50,50,50,.35);
+			font-size: 1.2em;
+			color: $background-color;
 		}
 	}
 }
