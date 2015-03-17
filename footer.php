@@ -4,7 +4,11 @@
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.lazyload.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-	    $("img.deferload").lazyload();
+	    $("img.deferload").lazyload(); 
+	    $('.close', '#search').on('click', function(){
+	    	$("#search").toggleClass('opened').toggleClass('closed');
+	    	return false;
+	    });
 	});
 </script>
 </body>

@@ -42,4 +42,12 @@
             ); ?>
             <nav class="sidebar"><?php dynamic_sidebar( 'Header After Menu' ); ?></nav>
     </header>
+    <div id="search" class="closed">
+        <span class="close">X</span>
+        <form action="<?php bloginfo('url'); ?>" id="searchform" method="get">
+            <label for="s" class="screen-reader-text">Buscar por:</label>
+            <input type="text" id="s" name="s" value="<?php the_search_query(); ?>" class="round" />
+            <input type="submit" value="Buscar" id="searchsubmit" />
+        </form>
+    </div>
     <main>
