@@ -28,5 +28,18 @@
                 <?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>
             </a>
         </h1>
+        <h2>
+            <?php bloginfo( 'description' ); ?> 
+        </h2>
+        <?php 
+            wp_nav_menu( 
+                    array( 
+                        'theme_location' => 'main-menu',
+                        'container' => 'nav',
+                        'container_class' => 'main-nav',
+                        'container_id'    => 'navigation'
+                    ) 
+            ); ?>
+            <nav class="sidebar"><?php dynamic_sidebar( 'Header After Menu' ); ?></nav>
     </header>
     <main>

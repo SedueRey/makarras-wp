@@ -7,9 +7,14 @@
 
 @import url("http://fonts.googleapis.com/css?family=Lora|Oswald:300,400");
 
+$background-color: #fff5e6;
+$text-color: #323232;
+$main-color: #221d1c;
+$link-color: #b43333;
+
 body{
-	background: #fff5e6;
-	color: #323232;
+	background: $background-color;
+	color: $text-color;
 	font-family: "Lora", Georgia;
 	font-size: 15px;
 	line-height: 1.55;
@@ -23,7 +28,7 @@ body{
 }
 
 a{
-	color: #b43333;
+	color: $link-color;
 }
 
 #mainheader{
@@ -33,15 +38,38 @@ a{
 	padding: 20px;
 	height: calc(100% - 40px);
 	width: 200px;
-	background: #221d1c;
+	background: $main-color;
 	color: #F0F0F0;
+	overflow: auto;
+	.menu, .sidebar{
+		margin: 0 0 0.8em 0;
+		ul{
+			list-style: inherit;
+			margin: 0 0 0 1.2em;
+			font-size: 0.9em;
+		}
+	}
+	&::-webkit-scrollbar {
+	    width: 10px;
+	}
+	 
+	&::-webkit-scrollbar-track {
+	    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	    border-radius: 8px;
+	}
+	 
+	&::-webkit-scrollbar-thumb {
+	    border-radius: 8px;
+	    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+	}
 }
 
-section{
+section, aside.sidebar{
 	max-width: 745px;
 	margin: 0 auto;
 	padding: 30px;
 }
+
 main{
 	margin: 0 0 0 210px;
 }

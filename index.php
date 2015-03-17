@@ -20,4 +20,5 @@
             <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
             <?php endif; ?>
         </section>
+        <aside class="sidebar"><?php dynamic_sidebar( 'Izquierda' ); ?></aside>
 <?php get_footer(); ?>

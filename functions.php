@@ -17,4 +17,22 @@ function register_my_menu() {
 
 add_action( 'init', 'register_my_menu' );
 
+register_sidebar( array(
+  'name' => 'Izquierda',
+  'description' => 'Widgets after Posts.',
+  'before_title' => '<h3>',
+  'after_title' => '</h3>',
+  'before_widget' => '<div class="box">',
+  'after_widget' => '</div>'
+));
+
+register_sidebar(array(
+  'name' => 'Header After Menu',
+  'description' => 'Widgets en este area iran a la columna simple derecha.',
+  'before_title' => '<h3>',
+  'after_title' => '</h3>',
+  'before_widget' => '<div class="box">',
+  'after_widget' => '</div>'
+));
+
 ?>
