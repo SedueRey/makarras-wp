@@ -12,6 +12,9 @@
                 </header>
         		<aside>
         			<?php the_time('F jS, Y') ?>, <?php the_author_posts_link() ?>
+                    <div class="avatar">
+                        <?= get_avatar( get_the_author_id(), $size = '36' );  ?>
+                    </div>
         		</aside>
         		<?php the_content(); ?>
                 <footer></footer>

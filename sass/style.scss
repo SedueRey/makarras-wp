@@ -4,6 +4,7 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/css3";
 
 @import url("http://fonts.googleapis.com/css?family=Lora|Oswald:300,400");
 
@@ -12,12 +13,14 @@ $text-color: #323232;
 $main-color: #221d1c;
 $link-color: #b43333;
 
+$avatar-size: 36px;
+
 body{
 	background: $background-color;
 	color: $text-color;
 	font-family: "Lora", Georgia;
-	font-size: 15px;
-	line-height: 1.55;
+	font-size: 18px;
+	line-height: 1.6;
 	&.customize-support{
 		margin: 20px 0 0 0;
 		#mainheader{
@@ -31,16 +34,23 @@ a{
 	color: $link-color;
 }
 
+h1,h2,h3,h4{
+	font-family: "Oswald", sans-serif;
+	line-height: 1.15;
+	font-weight: 300;
+	margin: 0.8em 0 0.5em 0;
+}
+
 #mainheader{
-	position: fixed;
-	top: 0px;
-	left: 0px;
 	padding: 20px;
-	height: calc(100% - 40px);
-	width: 200px;
+	height: 100%;
+	width: 250px;
 	background: $main-color;
 	color: #F0F0F0;
 	overflow: auto;
+	position: fixed;
+	left: 0px;
+	top:  0px;
 	.menu, .sidebar{
 		margin: 0 0 0.8em 0;
 		ul{
@@ -61,6 +71,7 @@ a{
 	&::-webkit-scrollbar-thumb {
 	    border-radius: 8px;
 	    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+	    background: lighten($main-color, 30%);
 	}
 }
 
@@ -78,7 +89,6 @@ article{
 	margin: 0 auto 3em auto;
 	h2{
 		font-size: 2em;
-		font-family: "Oswald", sans-serif;
 		font-weight: 400;
 		margin: 0 0 0.35em 0;
 		a{
@@ -91,7 +101,6 @@ article{
 		font-size: 1.8em;
 		font-weight: 300;
 		margin: 0.4em 0 0.3em 0;
-		font-family: "Oswald", sans-serif;
 		color: #787878;
 		&.subtitle{
 			margin: 0.4em 0 0 0;
@@ -116,6 +125,17 @@ article{
 	}
 	aside{
 		font-size: 0.95em;
-		margin: 0 0 1em 0;	
+		margin: 0 0 1em 0;
+		.avatar{
+			float: left;
+			@include border-radius($avatar-size);
+			position: relative;
+			margin: -24px 0 0 -26px;
+			img{
+				max-width: $avatar-size;
+				@include box-shadow(0 0 5px rgba(0,0,0,0.15));
+				@include border-radius($avatar-size);
+			}
+		}
 	}
 }
