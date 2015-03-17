@@ -9,6 +9,10 @@
 	    	$("#search").toggleClass('opened').toggleClass('closed');
 	    	return false;
 	    });
+	    $('.nav-toggler').on('click', function(){
+	    	$("#mainheader").toggleClass('opened');
+	    	return false;
+	    });
 	});
 </script>
 </body>

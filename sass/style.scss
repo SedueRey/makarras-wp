@@ -15,6 +15,9 @@ $link-color: #b43333;
 
 $avatar-size: 36px;
 
+$break-mobile: 768px;
+$break-tablet: 1200px;
+
 body{
 	background: $background-color;
 	color: $text-color;
@@ -145,6 +148,10 @@ h1,h2,h3,h4{
 	left: 0px;
 	top:  0px;
 	z-index: 9;
+	@include transition( left 0.5s linear );
+	.nav-toggler{
+		display: none;
+	}
 	.menu, .sidebar{
 		margin: 0 0 0.8em 0;
 		ul{
@@ -167,6 +174,69 @@ h1,h2,h3,h4{
 	    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 	    background: lighten($main-color, 30%);
 	}
+
+	@media screen and (max-width: $break-tablet) {
+	    left: -260px;
+	    overflow: hidden;
+	    .nav-toggler{
+	    	@include transition( left 0.5s linear );
+			display: block;
+			position: fixed;
+			left: 5px;
+			width: 20px;
+			height: 25px;
+			cursor: pointer;
+			padding: 5px 0 0 0;
+			span{
+				width: 20px;
+				height: 3px;
+				background-color: $link-color;
+				display: block;
+				@include transition( transform 0.5s ease-in-out );
+				&:before, &:after{
+					@include transition( transform 0.5s ease-in-out );
+					content: '';
+					width: 20px;
+					height: 3px;
+					background-color: $link-color;
+					display: block;
+					position: relative;
+				}
+				&:before{
+					top: -7px;
+				}
+				&:after{
+					top: 4px;
+				}
+			}
+		}
+		&.opened{
+			left: 0px;
+			overflow: auto;
+			.nav-toggler{
+				left: 250px;
+				span{
+					background-color: $link-color;
+					&:before, &:after{
+						background-color: $link-color;
+					}
+					&:before{
+						transform: rotateZ(-45deg);
+						left: -2px;
+						width: 16px;
+						top: -5px;
+					}
+					&:after{
+						transform: rotateZ(45deg);
+						left: -2px;
+						width: 16px;
+						top: 2px;
+					}
+				}
+			}
+		}
+	}
+
 }
 
 section, aside.sidebar{
@@ -177,6 +247,9 @@ section, aside.sidebar{
 
 main{
 	margin: 0 0 0 210px;
+	@media screen and (max-width: $break-tablet) {
+	    margin: 0 0 0 30px;
+	}
 }
 article{
 	max-width: 675px;
