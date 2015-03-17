@@ -23,7 +23,9 @@
 </head>
 <body>
     <header id="mainheader">
-        <div class="nav-toggler"><span></span></div>
+        <div class="nav-toggler">
+            <span></span>
+        </div>
     	<h1 id="logo">
             <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
                 <?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>

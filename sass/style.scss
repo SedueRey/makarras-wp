@@ -50,7 +50,7 @@ h1,h2,h3,h4{
 	right: 20px;
 	@include transition( all 0.25s linear );
 	&.closed{
-		background: lighten( $background-color, 15% );
+		background: lighten( $background-color, 5% );
 		border: 3px solid darken( $text-color, 10% );
 		width: $avatar-size / 2;
 		height: $avatar-size / 2;
@@ -73,12 +73,15 @@ h1,h2,h3,h4{
 		> .close{
 			cursor: pointer;
 			display: block;
-			color: lighten( $background-color, 15% );
-			background: lighten( $background-color, 15% );
+			color: lighten( $background-color, 5% );
+			background: lighten( $background-color, 5% );
 			width: $avatar-size / 2;
 			height: $avatar-size / 2;
 			@include border-radius( $avatar-size / 2 );
 			overflow: hidden;
+		}
+		@media screen and (max-width: $break-mobile) {
+			top: 13px;
 		}
 	}
 	&.opened{
@@ -101,6 +104,12 @@ h1,h2,h3,h4{
 			font-family: "Dosis", sans-serif;
 			color: $link-color;
 		}
+		@media screen and (max-width: $break-tablet) {
+			width: 80%;
+			height: 100%;
+			padding: 10%;
+			background: rgba(0,0,0,0.5);
+		}
 	}
 	form{
 		font-size: 1.4em;
@@ -117,6 +126,12 @@ h1,h2,h3,h4{
 				letter-spacing: 1px;
 				position: relative;
 				top: 2px;
+				@media screen and (max-width: $break-tablet) {
+					display: block;
+					padding: 0 0 0 0;
+					width: 100%;
+					margin: 0 0 0.8em 0;
+				}
 			}
 			&[type="submit"]{
 				font-family: "Dosis", serif;
@@ -176,34 +191,34 @@ h1,h2,h3,h4{
 	}
 
 	@media screen and (max-width: $break-tablet) {
-	    left: -260px;
+	    left: -249px;
 	    overflow: hidden;
 	    .nav-toggler{
 	    	@include transition( left 0.5s linear );
 			display: block;
 			position: fixed;
-			left: 5px;
-			width: 20px;
+			left: 7px;
+			width: 27px;
 			height: 25px;
 			cursor: pointer;
 			padding: 5px 0 0 0;
 			span{
-				width: 20px;
-				height: 3px;
-				background-color: $link-color;
+				width: 27px;
+				height: 4px;
+				background-color: $background-color;
 				display: block;
 				@include transition( transform 0.5s ease-in-out );
 				&:before, &:after{
 					@include transition( transform 0.5s ease-in-out );
 					content: '';
-					width: 20px;
-					height: 3px;
-					background-color: $link-color;
+					width: 27px;
+					height: 4px;
+					background-color: $background-color;
 					display: block;
 					position: relative;
 				}
 				&:before{
-					top: -7px;
+					top: -8px;
 				}
 				&:after{
 					top: 4px;
@@ -216,9 +231,11 @@ h1,h2,h3,h4{
 			.nav-toggler{
 				left: 250px;
 				span{
-					background-color: $link-color;
+					background-color: $background-color;
+					height: 3px;
 					&:before, &:after{
-						background-color: $link-color;
+						background-color: $background-color;
+						height: 3px;
 					}
 					&:before{
 						transform: rotateZ(-45deg);
@@ -236,6 +253,20 @@ h1,h2,h3,h4{
 			}
 		}
 	}
+	@media screen and (max-width: $break-mobile) {
+		background: transparent;
+		.nav-toggler{
+			span{
+				background-color: $link-color;
+				&:before, &:after{
+					background-color: $link-color;
+				}
+			}
+		}
+		&.opened{
+			background: $main-color;
+		}
+	}
 
 }
 
@@ -249,6 +280,10 @@ main{
 	margin: 0 0 0 210px;
 	@media screen and (max-width: $break-tablet) {
 	    margin: 0 0 0 30px;
+	}
+	@media screen and (max-width: $break-mobile) {
+	    font-size: 0.9em;
+	    margin: 35px 0 0 0;
 	}
 }
 article{
@@ -302,6 +337,9 @@ article{
 				max-width: $avatar-size;
 				@include box-shadow(0 0 5px rgba(0,0,0,0.15));
 				@include border-radius($avatar-size);
+			}
+			@media screen and (max-width: $break-mobile) {
+				display: none;
 			}
 		}
 	}
