@@ -4,8 +4,8 @@
  */
 function lazy_defer_load($content){
   $content_with_class = preg_replace("/<img(.*?)class=\"(.*?)\"(.*?)>/i", '<img$1class="$2 deferload"$3>', $content);
-  return
-    str_replace(' src="', ' data-original="', $content_with_class);
+  $content_with_class = preg_replace('/(width|height)="[0-9]*"/i', '', $content_with_class);
+  return str_replace(' src="', ' data-original="', $content_with_class);
 }
 
 add_filter('the_content', 'lazy_defer_load');
