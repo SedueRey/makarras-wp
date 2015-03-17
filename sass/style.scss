@@ -17,6 +17,7 @@ $avatar-size: 36px;
 
 $break-mobile: 768px;
 $break-tablet: 1200px;
+$small-screen: 1280px;
 
 body{
 	background: $background-color;
@@ -271,9 +272,12 @@ h1,h2,h3,h4{
 }
 
 section, aside.sidebar{
-	max-width: 745px;
+	max-width: 829px;
 	margin: 0 auto;
 	padding: 30px;
+	@media screen and (max-width: $break-tablet) {
+	    max-width: 750px;
+	}
 }
 
 main{
@@ -287,8 +291,8 @@ main{
 	}
 }
 article{
-	max-width: 675px;
-	margin: 0 auto 3em auto;
+	max-width: 829px;
+	margin: 0 auto 4em auto;
 	h2{
 		font-size: 2em;
 		font-weight: 400;
@@ -297,6 +301,7 @@ article{
 			text-decoration: none;
 			/*font-variant: small-caps;*/
 			border-bottom: 1px solid #b43333;
+			line-height: 1.3;
 		}
 	}
 	h3{
@@ -309,16 +314,24 @@ article{
 			font-size: 1.1em;
 			text-transform: uppercase;
 			position: relative;
-			top: 0.25em;		
+			top: -0.15em;		
 		}
 	}
 	p{
 		margin: 0 0 1em 0;
 	}
 	img{
-		margin: 0 auto;
 		max-width: 100%;
-		display: block;
+		&.alignleft{
+			float: left;
+		}
+		&.alignright{
+			float: left;
+		}
+		&.aligncenter{
+			display: block;
+			margin: 1em auto;
+		}
 	}
 	ul{
 		list-style: square;
@@ -326,8 +339,9 @@ article{
 		li{}
 	}
 	aside{
-		font-size: 0.95em;
-		margin: 0 0 1em 0;
+		font-size: 0.85em;
+		margin: 0 0 0.6em 0;
+		color: lighten( $text-color, 20% );
 		.avatar{
 			float: left;
 			@include border-radius($avatar-size);
@@ -337,6 +351,10 @@ article{
 				max-width: $avatar-size;
 				@include box-shadow(0 0 5px rgba(0,0,0,0.15));
 				@include border-radius($avatar-size);
+			}
+			@media screen and (max-width: $small-screen) {
+				float: right;
+				margin: -5px 0 0 -26px;
 			}
 			@media screen and (max-width: $break-mobile) {
 				display: none;
