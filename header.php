@@ -28,12 +28,9 @@
         </div>
     	<h1 id="logo">
             <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
-                <?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>
+                <span class="blogname"><?php bloginfo('name'); ?></span> <span class="blogdescription"><?php bloginfo('description'); ?></span>
             </a>
         </h1>
-        <h2>
-            <?php bloginfo( 'description' ); ?> 
-        </h2>
         <?php 
             wp_nav_menu( 
                     array( 

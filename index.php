@@ -1,5 +1,10 @@
 <?php get_header(); ?>
         <section>
+            <aside class="responsive_logo">
+                <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
+                    <span class="blogname"><?php bloginfo('name'); ?></span> <span class="blogdescription"><?php bloginfo('description'); ?></span>
+                </a>
+            </aside>
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         	<article id="post-<?php the_ID(); ?>" class="post<?php the_category_unlinked(' '); ?>">
                 <header>
