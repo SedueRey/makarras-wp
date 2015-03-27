@@ -285,13 +285,19 @@ h1,h2,h3,h4{
 
 }
 
-section, aside.sidebar{
+section, aside.sidebar, #older_entries{
 	max-width: 829px;
 	margin: 0 auto;
 	padding: 30px;
 	@media screen and (max-width: $break-tablet) {
 	    max-width: 750px;
 	}
+}
+
+#footer{
+	text-align: right;
+	font-size: 0.7em;
+	padding: 2em 0.8em 0 0.8em;
 }
 
 section{
@@ -314,6 +320,35 @@ section{
 		}
 		@media screen and (max-width: $break-mobile) {
 			display: block;
+		}
+	}
+}
+
+#older_entries{
+	h3{
+		font-size: 1.4em;
+		font-weight: 300;
+	}
+	.wp-pagenavi{
+		font-size: 0.85em;
+		> * {
+			border: 0px none;
+			padding: 9px 0 0 0;
+			height: 36px;
+			display: inline-block;
+			text-align: center;
+		}
+		a{
+			width: 45px;
+			border-radius: 90px;
+			background-color: darken( $background-color, 5%);
+			vertical-align: middle;
+			@include box-shadow( 0 0 3px 0 rgba( darken($background-color, 60%), 0.25 ) );
+			&:hover{
+				color: darken( $background-color, 5%);
+				background-color: $link-color;
+				@include box-shadow( 0 0 8px 0 rgba( darken($background-color, 60%), 0.5 ) );
+			}
 		}
 	}
 }

@@ -1,4 +1,7 @@
 </main>
+<footer id="footer">
+	<a lang="en" href="https://github.com/SedueRey/makarras-wp">Fork this theme if you want to!</a>
+</footer>
 <?php wp_footer(); ?>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.lazyload.min.js"></script>

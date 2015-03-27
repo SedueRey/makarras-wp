@@ -32,5 +32,9 @@
             <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
             <?php endif; ?>
         </section>
+        <nav id="older_entries">
+            <h3>No se vayan todav&iacute;a, a&uacute;n hay m&aacute;s</h3>
+            <?php wp_pagenavi(); ?> 
+        </nav> 
         <aside class="sidebar"><?php dynamic_sidebar( 'Izquierda' ); ?></aside>
 <?php get_footer(); ?>
