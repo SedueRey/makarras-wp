@@ -169,10 +169,11 @@ h1,h2,h3,h4{
 		display: none;
 	}
 	#logo{
-		background: url('images/logo_header.png') no-repeat top left;
-		background-size: 100%;
 		padding: 60px 0 0 0;
 		a{
+			background: url('images/logo_header.png') no-repeat top left;
+			background-size: 100%;
+			padding: 60px 0 0 0;
 			text-decoration: none;
 			color: $background-color;
 			.blogname{
@@ -469,6 +470,39 @@ article{
 			text-shadow: 0 -0.03em 0.25em rgba(50,50,50,.35);
 			font-size: 1.2em;
 			color: $background-color;
+		}
+	}
+}
+
+#comments{
+	h3{
+		font-size: 1.8em;
+	}
+	.comments{
+		form{
+			padding: 0.8em;
+			background: darken( $background-color, 5% );
+			textarea{
+				width: 100%;
+			}
+		}
+	}
+	.commentlist{
+		.metacomment{
+			font-size: 0.85em;
+		}
+		.commentavatar{
+			float: left;
+			img{
+				margin: 0 0.8em 0 0;
+			}
+		}
+		li{
+			margin: 0 0 0.8em 0;
+			padding: 0.8em;
+			&.odd{
+				background: lighten( $background-color, 5% );
+			}
 		}
 	}
 }
